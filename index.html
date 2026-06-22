@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>數感宇宙序曲・單元 1〈數學世界〉電子書完整版・方案二（橫書）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* 柔和中性・偏淡薰衣草灰白，襯托圖片不搶色 */
+    --paper:#f6f4fa;        /* 主底：極淡薰衣草灰白 */
+    --paper2:#fbfaff;       /* 紙面亮色 */
+    --page-bg:#f3f1f8;      /* 文字頁底 */
+    --gutter:#e3dfee;       /* 書溝 */
+    --ink:#3b3a48;          /* 墨灰紫，主文字 */
+    --ink-soft:#6c6a7e;     /* 次要文字 */
+    --accent:#7b8fd6;       /* 天空藍紫，點綴 Latin */
+    --accent2:#9a8fcf;      /* 薰衣草紫 */
+    --gold:#c9a24b;         /* 螺旋金 */
+    --shadow:rgba(110,100,150,.18);
+    --serif:"Noto Serif TC", serif;
+    --sans:"Noto Sans TC", sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--serif);
+    color:var(--ink);
+    background:
+      radial-gradient(1300px 760px at 50% -12%, #fcfbff 0%, #f4f2fa 55%, #eeebf6 100%);
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    padding:48px 24px 96px;
+  }
+
+  /* ---------- 頂部說明 ---------- */
+  .intro{
+    max-width:1000px;
+    margin:0 auto 56px;
+    background:rgba(255,255,255,.74);
+    border:1px solid #e8e4f2;
+    border-radius:20px;
+    padding:30px 38px;
+    box-shadow:0 12px 34px -20px var(--shadow);
+  }
+  .intro .sub{
+    font-family:var(--sans); font-size:14px; color:var(--accent2);
+    font-weight:700; letter-spacing:1px; margin-bottom:10px;
+  }
+  .intro h1{
+    font-size:26px; font-weight:900; letter-spacing:.5px;
+    margin:0 0 12px; color:var(--ink);
+  }
+  .intro p{font-family:var(--sans); font-size:15px; line-height:1.9; color:var(--ink-soft); margin:8px 0;}
+  .intro .pages{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;}
+  .intro .chip{
+    font-family:var(--sans); font-size:13px; font-weight:500;
+    background:#efecf8; color:var(--ink);
+    border:1px solid #e2ddf0; border-radius:999px;
+    padding:6px 14px;
+  }
+  .intro .chip b{color:var(--accent2);}
+
+  /* ---------- 書（跨頁容器） ---------- */
+  .book{
+    max-width:min(1600px, 96vw);
+    margin:0 auto 60px;
+    display:flex;
+    background:linear-gradient(180deg,#ffffff,var(--paper2));
+    border-radius:22px;
+    box-shadow:
+      0 26px 64px -32px var(--shadow),
+      0 2px 0 rgba(255,255,255,.65) inset;
+    overflow:hidden;
+    position:relative;
+    aspect-ratio:16/9;
+    border:1px solid #ece8f4;
+  }
+  /* 書溝：中央淡淡的折痕 */
+  .book::after{
+    content:"";
+    position:absolute; top:0; bottom:0; left:50%;
+    width:44px; transform:translateX(-50%);
+    background:linear-gradient(90deg,
+      rgba(150,140,180,0) 0%,
+      rgba(150,140,180,.09) 38%,
+      rgba(130,120,165,.18) 50%,
+      rgba(150,140,180,.09) 62%,
+      rgba(150,140,180,0) 100%);
+    pointer-events:none; z-index:3;
+  }
+
+  .half{width:50%; position:relative;}
+
+  /* 圖半邊：整張圖填滿右頁，圓角＋極淡陰影 */
+  .page-img{padding:34px;}
+  .page-img img{
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:16px;
+    box-shadow:0 14px 34px -22px rgba(120,110,160,.40);
+    display:block;
+  }
+
+  /* 文字半邊 */
+  .page-text{
+    padding:64px 72px;
+    display:flex; flex-direction:column; justify-content:center;
+    background:linear-gradient(180deg,var(--page-bg),var(--paper2));
+  }
+  .page-text .pno{
+    font-family:var(--sans); font-size:12px; font-weight:700;
+    letter-spacing:2px; color:var(--accent2);
+    margin-bottom:20px; opacity:.9;
+  }
+  .page-text p{
+    margin:0 0 1.15em; font-size:23px; line-height:2.0;
+    color:var(--ink); text-align:justify;
+  }
+  .page-text p:last-child{margin-bottom:0;}
+
+  /* Latin / 數字微調（橫書） */
+  .lat{font-family:var(--sans); font-weight:600; color:var(--accent); letter-spacing:.3px;}
+  .num{font-family:var(--sans); font-weight:700; color:var(--gold); letter-spacing:1px;}
+
+  /* 響應式：窄螢幕上下疊 */
+  @media (max-width:860px){
+    .book{aspect-ratio:auto; flex-direction:column;}
+    .half{width:100%;}
+    .page-img{height:320px; padding:18px;}
+    .page-text{padding:34px;}
+    .page-text p{font-size:17px;}
+  }
+  .footer{
+    max-width:1000px; margin:60px auto 0; text-align:center;
+    font-family:var(--sans); font-size:13px; color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== 頂部說明 ===== -->
+  <section class="intro">
+    <div class="sub">數感宇宙 IP・序曲〈起源故事〉電子書完整成品版</div>
+    <h1>單元 1〈數學世界〉電子書完整版・方案二（橫書）・3 跨頁</h1>
+    <p>本檔為給作者與設計部門看的<b style="color:var(--accent2)">最終樣子</b>：橫書、由左到右閱讀，每個跨頁<b>左半為故事文字、右半為整張插圖</b>。共 3 個連續跨頁，依故事節奏拆分（鋪陳數學世界 → 兩位主角 → 對話高潮）。</p>
+    <p>圖片為<b style="color:var(--accent2)">薰衣草紫＋天空藍</b>定調版（scene01_p1／p2／p3）。頁面以柔和、乾淨、偏淡的中性薰衣草灰白底襯托插圖，大量留白、襯線書卷體（Noto Serif TC），保持繪本般高級乾淨感。</p>
+    <div class="pages">
+      <span class="chip">跨頁 ①〈數學世界〉→ <b>scene01_p1</b></span>
+      <span class="chip">跨頁 ②〈兩個傢伙〉→ <b>scene01_p2</b></span>
+      <span class="chip">跨頁 ③〈追螺旋的那天〉→ <b>scene01_p3</b></span>
+    </div>
+  </section>
+
+  <!-- 跨頁 ① -->
+  <div class="book">
+    <div class="half page-text">
+      <div class="pno">跨頁 ①　數學世界</div>
+      <p>在所有世界的最裡面，有一個數學的世界。那裡沒有天空，沒有地面，沒有樹、沒有石頭，也沒有任何一件真正的東西。漂浮在那裡的，全都是數學——會發光的立體幾何慢慢轉著，數字和符號像灰塵一樣飄，還有一條一條金色的螺旋，從很遠的地方捲過來，又往更遠的地方捲回去。整個世界是乾淨的藍紫色，很安靜。</p>
+    </div>
+    <div class="half page-img">
+      <img src="images/scene01_p1.png" alt="數學世界：發光的立體幾何、飄浮的數字符號、金色螺旋，乾淨的藍紫色">
+    </div>
+  </div>
+
+  <!-- 跨頁 ② -->
+  <div class="book">
+    <div class="half page-text">
+      <div class="pno">跨頁 ②　兩個傢伙</div>
+      <p>世界裡住著兩個傢伙，<span class="lat">NumNum</span> 和 <span class="lat">Numi</span>。他們每天做的事，就是研究數學。<span class="lat">NumNum</span> 喜歡把東西弄整齊。它會量一量漂浮的圓，看它到底繞了自己幾圈；會把散落的數字一個一個排好，排成左右對稱，然後退後幾步，滿意地端詳很久。<span class="lat">Numi</span> 剛好相反。<span class="lat">Numi</span> 最愛追那條金色的螺旋——那螺旋是一格一格的方塊接起來的，一格、又一格、<span class="num">兩</span>格、<span class="num">三</span>格、<span class="num">五</span>格、<span class="num">八</span>格，越接越大，繞成一個像海螺殼那樣越捲越小的弧。<span class="lat">Numi</span> 張開手追著它跑，想抓住最中間那一點。</p>
+    </div>
+    <div class="half page-img">
+      <img src="images/scene01_p2.png" alt="NumNum 排列對稱數字、Numi 追逐金色螺旋">
+    </div>
+  </div>
+
+  <!-- 跨頁 ③ -->
+  <div class="book">
+    <div class="half page-text">
+      <div class="pno">跨頁 ③　追螺旋的那天</div>
+      <p>「<span class="lat">NumNum</span>！你看你看！」<span class="lat">Numi</span> 一邊跑一邊喊，「我快抓到中間了！」「你抓不到的。」<span class="lat">NumNum</span> 頭也沒抬，繼續排它的數字，「那個中心永遠在更裡面一點點，這是它的規則。」「才不要管什麼規則——」<span class="lat">Numi</span> 加速衝刺，結果一個沒煞住，整個撞進 <span class="lat">NumNum</span> 剛排好的數字堆裡，把對稱的隊伍撞得東倒西歪。<span class="lat">NumNum</span> 看著滿地亂掉的數字，嘆了一口氣。<span class="lat">Numi</span> 從數字堆裡爬出來，咧嘴笑了笑，一點也沒有要道歉的意思。這樣的日子，一天接著一天。數學很有趣，可是這個世界實在太安靜了——安靜久了，難免會有那麼一點點，無聊。</p>
+    </div>
+    <div class="half page-img">
+      <img src="images/scene01_p3.png" alt="Numi 撞進 NumNum 排好的數字堆，數字東倒西歪">
+    </div>
+  </div>
+
+  <div class="footer">數感宇宙 IP・序曲・單元 1〈數學世界〉　|　電子書完整成品版　|　方案二・橫書（左到右）・3 跨頁　|　圖：薰衣草紫＋天空藍定調版</div>
+
+</body>
+</html>
