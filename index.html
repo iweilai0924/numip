@@ -3,192 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>數感宇宙序曲・單元 1〈數學世界〉電子書完整版・方案二（橫書）</title>
+<title>數感宇宙・序曲〈起源故事〉電子書（單元 1–4）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* 柔和中性・偏淡薰衣草灰白，襯托圖片不搶色 */
-    --paper:#f6f4fa;        /* 主底：極淡薰衣草灰白 */
-    --paper2:#fbfaff;       /* 紙面亮色 */
-    --page-bg:#f3f1f8;      /* 文字頁底 */
-    --gutter:#e3dfee;       /* 書溝 */
-    --ink:#3b3a48;          /* 墨灰紫，主文字 */
-    --ink-soft:#6c6a7e;     /* 次要文字 */
-    --accent:#7b8fd6;       /* 天空藍紫，點綴 Latin */
-    --accent2:#9a8fcf;      /* 薰衣草紫 */
-    --gold:#c9a24b;         /* 螺旋金 */
+    --paper:#f6f4fa; --paper2:#fbfaff; --page-bg:#f3f1f8; --gutter:#e3dfee;
+    --ink:#3b3a48; --ink-soft:#6c6a7e; --accent:#7b8fd6; --accent2:#9a8fcf; --gold:#c9a24b;
     --shadow:rgba(110,100,150,.18);
-    --serif:"Noto Serif TC", serif;
-    --sans:"Noto Sans TC", sans-serif;
+    --serif:"Noto Serif TC", serif; --sans:"Noto Sans TC", sans-serif;
   }
-
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    font-family:var(--serif);
-    color:var(--ink);
-    background:
-      radial-gradient(1300px 760px at 50% -12%, #fcfbff 0%, #f4f2fa 55%, #eeebf6 100%);
-    line-height:1.9;
-    -webkit-font-smoothing:antialiased;
-    padding:48px 24px 96px;
+    font-family:var(--serif); color:var(--ink);
+    background:radial-gradient(1300px 760px at 50% -12%, #fcfbff 0%, #f4f2fa 55%, #eeebf6 100%);
+    line-height:1.9; -webkit-font-smoothing:antialiased; padding:48px 24px 110px;
   }
-
-  /* ---------- 頂部說明 ---------- */
   .intro{
-    max-width:1000px;
-    margin:0 auto 56px;
-    background:rgba(255,255,255,.74);
-    border:1px solid #e8e4f2;
-    border-radius:20px;
-    padding:30px 38px;
-    box-shadow:0 12px 34px -20px var(--shadow);
+    max-width:1000px; margin:0 auto 44px; background:rgba(255,255,255,.74);
+    border:1px solid #e8e4f2; border-radius:20px; padding:30px 38px;
+    box-shadow:0 12px 34px -20px var(--shadow); text-align:center;
   }
-  .intro .sub{
-    font-family:var(--sans); font-size:14px; color:var(--accent2);
-    font-weight:700; letter-spacing:1px; margin-bottom:10px;
-  }
-  .intro h1{
-    font-size:26px; font-weight:900; letter-spacing:.5px;
-    margin:0 0 12px; color:var(--ink);
-  }
-  .intro p{font-family:var(--sans); font-size:15px; line-height:1.9; color:var(--ink-soft); margin:8px 0;}
-  .intro .pages{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;}
-  .intro .chip{
-    font-family:var(--sans); font-size:13px; font-weight:500;
-    background:#efecf8; color:var(--ink);
-    border:1px solid #e2ddf0; border-radius:999px;
-    padding:6px 14px;
-  }
-  .intro .chip b{color:var(--accent2);}
+  .intro .sub{font-family:var(--sans); font-size:14px; color:var(--accent2); font-weight:700; letter-spacing:1px; margin-bottom:10px;}
+  .intro h1{font-size:28px; font-weight:900; letter-spacing:.5px; margin:0 0 12px; color:var(--ink);}
+  .intro p{font-family:var(--sans); font-size:15px; line-height:1.9; color:var(--ink-soft); margin:6px 0;}
 
-  /* ---------- 書（跨頁容器） ---------- */
-  .book{
-    max-width:min(1600px, 96vw);
-    margin:0 auto 60px;
-    display:flex;
-    background:linear-gradient(180deg,#ffffff,var(--paper2));
-    border-radius:22px;
-    box-shadow:
-      0 26px 64px -32px var(--shadow),
-      0 2px 0 rgba(255,255,255,.65) inset;
-    overflow:hidden;
-    position:relative;
-    aspect-ratio:16/9;
-    border:1px solid #ece8f4;
+  .unit-title{
+    max-width:min(1600px,96vw); margin:54px auto 22px; text-align:center;
+    font-family:var(--serif); font-weight:700; font-size:24px; color:var(--accent2);
+    letter-spacing:2px; position:relative;
   }
-  /* 書溝：中央淡淡的折痕 */
+  .unit-title span{background:transparent; padding:0 22px;}
+  .unit-title::before, .unit-title::after{
+    content:""; position:absolute; top:50%; width:22%; height:1px;
+    background:linear-gradient(90deg, transparent, #cfc7e6);
+  }
+  .unit-title::before{left:8%;} .unit-title::after{right:8%; background:linear-gradient(270deg, transparent, #cfc7e6);}
+
+  .book{
+    max-width:min(1600px,96vw); margin:0 auto 40px; display:flex; align-items:stretch;
+    background:linear-gradient(180deg,#ffffff,var(--paper2)); border-radius:22px;
+    box-shadow:0 26px 64px -32px var(--shadow), 0 2px 0 rgba(255,255,255,.65) inset;
+    overflow:hidden; position:relative; border:1px solid #ece8f4; min-height:520px;
+  }
   .book::after{
-    content:"";
-    position:absolute; top:0; bottom:0; left:50%;
-    width:44px; transform:translateX(-50%);
-    background:linear-gradient(90deg,
-      rgba(150,140,180,0) 0%,
-      rgba(150,140,180,.09) 38%,
-      rgba(130,120,165,.18) 50%,
-      rgba(150,140,180,.09) 62%,
-      rgba(150,140,180,0) 100%);
+    content:""; position:absolute; top:0; bottom:0; left:50%; width:44px; transform:translateX(-50%);
+    background:linear-gradient(90deg, rgba(150,140,180,0) 0%, rgba(150,140,180,.09) 38%, rgba(130,120,165,.18) 50%, rgba(150,140,180,.09) 62%, rgba(150,140,180,0) 100%);
     pointer-events:none; z-index:3;
   }
-
   .half{width:50%; position:relative;}
-
-  /* 圖半邊：整張圖填滿右頁，圓角＋極淡陰影 */
-  .page-img{padding:34px;}
-  .page-img img{
-    width:100%; height:100%;
-    object-fit:cover;
-    border-radius:16px;
-    box-shadow:0 14px 34px -22px rgba(120,110,160,.40);
-    display:block;
-  }
-
-  /* 文字半邊 */
   .page-text{
-    padding:64px 72px;
-    display:flex; flex-direction:column; justify-content:center;
+    padding:56px 64px; display:flex; flex-direction:column; justify-content:center;
     background:linear-gradient(180deg,var(--page-bg),var(--paper2));
   }
-  .page-text .pno{
-    font-family:var(--sans); font-size:12px; font-weight:700;
-    letter-spacing:2px; color:var(--accent2);
-    margin-bottom:20px; opacity:.9;
-  }
-  .page-text p{
-    margin:0 0 1.15em; font-size:23px; line-height:2.0;
-    color:var(--ink); text-align:justify;
-  }
+  .page-text .pno{font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:2px; color:var(--accent2); margin-bottom:18px; opacity:.9;}
+  .page-text p{margin:0 0 1.0em; font-size:22px; line-height:1.95; color:var(--ink); text-align:justify;}
   .page-text p:last-child{margin-bottom:0;}
+  .page-img{display:flex; align-items:center; justify-content:center; padding:32px; background:radial-gradient(120% 120% at 80% 0%, #fbfaff 0%, #f1eff9 100%);}
+  .page-img img{width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:16px; box-shadow:0 14px 34px -22px rgba(120,110,160,.45); display:block;}
 
-  /* Latin / 數字微調（橫書） */
-  .lat{font-family:var(--sans); font-weight:600; color:var(--accent); letter-spacing:.3px;}
-  .num{font-family:var(--sans); font-weight:700; color:var(--gold); letter-spacing:1px;}
-
-  /* 響應式：窄螢幕上下疊 */
-  @media (max-width:860px){
-    .book{aspect-ratio:auto; flex-direction:column;}
+  @media (max-width:880px){
+    .book{flex-direction:column; min-height:0;}
     .half{width:100%;}
-    .page-img{height:320px; padding:18px;}
-    .page-text{padding:34px;}
-    .page-text p{font-size:17px;}
+    .page-text{padding:34px;} .page-text p{font-size:18px;}
+    .page-img{padding:20px;} .page-img img{aspect-ratio:4/3;}
   }
-  .footer{
-    max-width:1000px; margin:60px auto 0; text-align:center;
-    font-family:var(--sans); font-size:13px; color:var(--ink-soft);
-  }
+  .footer{max-width:1000px; margin:64px auto 0; text-align:center; font-family:var(--sans); font-size:13px; color:var(--ink-soft);}
 </style>
 </head>
 <body>
-
-  <!-- ===== 頂部說明 ===== -->
   <section class="intro">
-    <div class="sub">數感宇宙 IP・序曲〈起源故事〉電子書完整成品版</div>
-    <h1>單元 1〈數學世界〉電子書完整版・方案二（橫書）・3 跨頁</h1>
-    <p>本檔為給作者與設計部門看的<b style="color:var(--accent2)">最終樣子</b>：橫書、由左到右閱讀，每個跨頁<b>左半為故事文字、右半為整張插圖</b>。共 3 個連續跨頁，依故事節奏拆分（鋪陳數學世界 → 兩位主角 → 對話高潮）。</p>
-    <p>圖片為<b style="color:var(--accent2)">薰衣草紫＋天空藍</b>定調版（scene01_p1／p2／p3）。頁面以柔和、乾淨、偏淡的中性薰衣草灰白底襯托插圖，大量留白、襯線書卷體（Noto Serif TC），保持繪本般高級乾淨感。</p>
-    <div class="pages">
-      <span class="chip">跨頁 ①〈數學世界〉→ <b>scene01_p1</b></span>
-      <span class="chip">跨頁 ②〈兩個傢伙〉→ <b>scene01_p2</b></span>
-      <span class="chip">跨頁 ③〈追螺旋的那天〉→ <b>scene01_p3</b></span>
-    </div>
+    <div class="sub">數感宇宙 IP・序曲〈起源故事〉</div>
+    <h1>數感宇宙・序曲｜電子書</h1>
+    <p>單元 1–4・共 12 跨頁　|　橫書、由左到右，每跨頁左文字、右插圖。</p>
+    <p>NumNum 與 Numi 從只有數學的世界，一路陪伴阿基米德、高斯、圖靈……直到一場造機器人的比賽。</p>
   </section>
 
-  <!-- 跨頁 ① -->
-  <div class="book">
-    <div class="half page-text">
-      <div class="pno">跨頁 ①　數學世界</div>
-      <p>在所有世界的最裡面，有一個數學的世界。那裡沒有天空，沒有地面，沒有樹、沒有石頭，也沒有任何一件真正的東西。漂浮在那裡的，全都是數學——會發光的立體幾何慢慢轉著，數字和符號像灰塵一樣飄，還有一條一條金色的螺旋，從很遠的地方捲過來，又往更遠的地方捲回去。整個世界是乾淨的藍紫色，很安靜。</p>
-    </div>
-    <div class="half page-img">
-      <img src="images/scene01_p1.png" alt="數學世界：發光的立體幾何、飄浮的數字符號、金色螺旋，乾淨的藍紫色">
-    </div>
-  </div>
+  <main id="book"></main>
 
-  <!-- 跨頁 ② -->
-  <div class="book">
-    <div class="half page-text">
-      <div class="pno">跨頁 ②　兩個傢伙</div>
-      <p>世界裡住著兩個傢伙，<span class="lat">NumNum</span> 和 <span class="lat">Numi</span>。他們每天做的事，就是研究數學。<span class="lat">NumNum</span> 喜歡把東西弄整齊。它會量一量漂浮的圓，看它到底繞了自己幾圈；會把散落的數字一個一個排好，排成左右對稱，然後退後幾步，滿意地端詳很久。<span class="lat">Numi</span> 剛好相反。<span class="lat">Numi</span> 最愛追那條金色的螺旋——那螺旋是一格一格的方塊接起來的，一格、又一格、<span class="num">兩</span>格、<span class="num">三</span>格、<span class="num">五</span>格、<span class="num">八</span>格，越接越大，繞成一個像海螺殼那樣越捲越小的弧。<span class="lat">Numi</span> 張開手追著它跑，想抓住最中間那一點。</p>
-    </div>
-    <div class="half page-img">
-      <img src="images/scene01_p2.png" alt="NumNum 排列對稱數字、Numi 追逐金色螺旋">
-    </div>
-  </div>
+  <div class="footer">數感宇宙 IP・序曲・起源故事　|　單元 1–4 電子書（草稿）　|　插圖：薰衣草天空藍（數學世界）＋暖色（人間）</div>
 
-  <!-- 跨頁 ③ -->
-  <div class="book">
-    <div class="half page-text">
-      <div class="pno">跨頁 ③　追螺旋的那天</div>
-      <p>「<span class="lat">NumNum</span>！你看你看！」<span class="lat">Numi</span> 一邊跑一邊喊，「我快抓到中間了！」「你抓不到的。」<span class="lat">NumNum</span> 頭也沒抬，繼續排它的數字，「那個中心永遠在更裡面一點點，這是它的規則。」「才不要管什麼規則——」<span class="lat">Numi</span> 加速衝刺，結果一個沒煞住，整個撞進 <span class="lat">NumNum</span> 剛排好的數字堆裡，把對稱的隊伍撞得東倒西歪。<span class="lat">NumNum</span> 看著滿地亂掉的數字，嘆了一口氣。<span class="lat">Numi</span> 從數字堆裡爬出來，咧嘴笑了笑，一點也沒有要道歉的意思。這樣的日子，一天接著一天。數學很有趣，可是這個世界實在太安靜了——安靜久了，難免會有那麼一點點，無聊。</p>
-    </div>
-    <div class="half page-img">
-      <img src="images/scene01_p3.png" alt="Numi 撞進 NumNum 排好的數字堆，數字東倒西歪">
-    </div>
-  </div>
+<script>
+const DATA = [
+  { title:"單元 1〈數學世界〉", label:"單元 1・數學世界", spreads:[
+    { img:"scene01_p1.png", paras:[
+      "在所有世界的最裡面，有一個數學的世界。",
+      "那裡沒有天空，沒有地面，沒有樹，沒有石頭，也沒有任何一件真正的東西。漂浮在那裡的，全都是數學——發光的立體幾何慢慢轉著，數字和符號像灰塵一樣飄，一條一條金色的螺旋從很遠的地方捲過來，又往更遠的地方捲回去。整個世界是乾淨的藍紫色，安靜得不得了。"
+    ]},
+    { img:"scene01_p2.png", paras:[
+      "世界裡住著兩個傢伙，NumNum 和 Numi。它們每天做的事只有一件：研究數學。（在一個除了數學什麼都沒有的世界，這其實也沒什麼好挑的。）",
+      "NumNum 喜歡整齊。它會量一量漂浮的圓，數它到底繞了自己幾圈；把散落的數字一個一個排成左右對稱，再退後幾步，滿意地端詳很久——久到你以為它睡著了。",
+      "Numi 剛好相反。Numi 最愛追那條金色的螺旋。那螺旋是一格一格的方塊接起來的，一格、又一格、兩格、三格、五格、八格，越接越大，繞成一個像海螺殼那樣越捲越小的弧。Numi 追著它跑，想抓住最中間那一點。"
+    ]},
+    { img:"scene01_p3.png", paras:[
+      "「NumNum！你看你看！」Numi 一邊跑一邊喊，「我快抓到中間了！」",
+      "「你抓不到的。」NumNum 頭也沒抬，「那個中心永遠在更裡面一點點。這是規則。」",
+      "「才不要管什麼規則——」",
+      "話還沒喊完，Numi 已經一個沒煞住，整個撞進 NumNum 剛排好的數字堆，把好端端的對稱隊伍撞得東倒西歪。",
+      "NumNum 看著滿地亂掉的數字，深深嘆了一口氣。Numi 從數字堆裡爬出來，咧嘴一笑，臉上沒有半點歉意——彷彿剛剛完成了什麼了不起的壯舉。",
+      "日子一天接著一天。數學是很有趣，可是這世界太安靜了——安靜久了，總會冒出那麼一點點，無聊。"
+    ]}
+  ]},
+  { title:"單元 2〈召喚〉", label:"單元 2・召喚", spreads:[
+    { img:"scene02_p1.png", paras:[
+      "某天，在很遠很遠的地方，忽然亮起一道微光。",
+      "那不是 NumNum 跟 Numi 熟悉的冷光，而是暖暖黃黃的，像我們的太陽，一點一點滲進這片藍紫色的世界。光裡好像還夾著一個很小的聲音，小到讓人忍不住想靠近一點、聽清楚一點。",
+      "「NumNum！NumNum！那是什麼——」Numi 第一個彈起來，眼睛瞪得圓圓的，「那邊有東西！是暖的！還會出聲音耶！」",
+      "「等一下。」NumNum 停下手。它在這裡待了那麼久，從沒看過暖色，也沒聽過聲音——這裡只有安靜。「我們又不知道那是什麼。」",
+      "「所以才要去看看啊！」這句話 NumNum 是對著空氣說的，因為 Numi 早就衝出去了。",
+      "「Numi——！」NumNum 嘆口氣，只好追上去。（說真的，它心裡也癢得不得了。）",
+      "越靠近，光越亮，聲音越清楚。世界的邊緣在那裡變得薄薄的，像一層快要透光的紙。Numi 想都沒想就一頭撞上去，NumNum 趕緊抓住它，然後——「哇——」兩個同時叫了出來。因為眼前，是它們這輩子第一次看見的、真正的東西。"
+    ]},
+    { img:"scene02_p2.png", paras:[
+      "一個被陽光曬得暖暖的房間。牆是石頭疊的，地板硬硬的，屋子中央一張矮木桌，桌上擺著一個裝滿水的大盆子。盆子前面，蹲著一個男孩。",
+      "NumNum 和 Numi 這才明白：那道光、那個聲音，原來都是從這個男孩身上散出來的。",
+      "男孩大概十歲，正把手邊的東西一樣一樣放進水裡——一顆石頭、一塊木頭、一個奇形怪狀的小銅塊。每放一樣，水就往上升一點，有時候還溢出來。他盯著水面喃喃自語，眉頭皺得緊緊的，像在想一件天大的難事。",
+      "他把那塊奇形怪狀的銅塊整個壓進水裡。水「嘩」地漫了出來，灑了他一手。",
+      "男孩盯著那灘水——忽然，眼睛亮了。",
+      "「啊……」他愣了一下，接著猛地站起來，水花濺得到處都是（那盆水，現在大半在他身上），他卻一點也不在乎：「不管形狀多奇怪，只要看它擠出多少水，就知道它有多大了！」",
+      "「Eureka——！」他放開喉嚨大喊，整張臉都在發光，「我知道了！我懂了！」"
+    ]},
+    { img:"scene02_p3.png", paras:[
+      "那股暖暖的能量，跟剛才在數學世界裡一樣，一圈一圈從他身上漫開，輕輕把 NumNum 和 Numi 裹住。男孩開心得不得了，開心到連 NumNum 和 Numi 都跟著開心起來，心裡暖暖、癢癢的，舒服極了。",
+      "笑著笑著，男孩一回頭——就這樣，看見了它們。",
+      "兩個圓圓的、會發光的小傢伙，正飄在書架旁邊，跟他一起傻笑。",
+      "換作別的小孩，大概早就嚇得跳起來了。可這男孩太開心，眼裡只剩下好奇。他歪著頭，眨眨眼。",
+      "「咦？」他問，「你們是誰啊？」",
+      "「我是 Numi！這是 NumNum！」Numi 第一個衝上前，「我們從一個只有數學的世界來的——我們聞到你好開心，就跑過來啦！」",
+      "「你剛剛擠出來的那些水，正好跟那塊銅塊一樣大。」NumNum 鎮定得多，但眼睛也亮亮的，「這樣，再奇怪的形狀，你都量得出它有多大——你發現了一件很了不起的事喔。」",
+      "男孩看看它們，又看看自己濺了一地的水，咧嘴笑了。",
+      "「喔——」他抹掉臉上的水珠，「我叫阿基米德。」",
+      "那是 NumNum 和 Numi 第一次，在真實世界裡交到的朋友。"
+    ]}
+  ]},
+  { title:"單元 3〈老朋友們〉", label:"單元 3・老朋友們", spreads:[
+    { img:"scene03_p1.png", paras:[
+      "NumNum 和 Numi 在阿基米德身邊待了好長一段時間。",
+      "它們從不「教」他數學——NumNum 說，那樣太無趣了。它只是在阿基米德卡住的時候，輕輕丟一個問題：「那換個形狀呢？」「你怎麼確定一定是這樣？」剩下的，全讓阿基米德自己想。每次他一想通，暖暖的 Eureka 就漫出來，兩個傢伙便舒舒服服地飽餐一頓。至於 Numi，負責逗他笑、陪他玩，在他對著牆壁發呆時，在一旁跳上跳下。（阿基米德後來那些了不起的點子，說不定有一半是被 Numi 吵出來的。）",
+      "就這樣，那個玩水的男孩，慢慢長成了古希臘最了不起的科學家。",
+      "直到很久以後，阿基米德老了。NumNum 和 Numi 跟他輕輕道別，回到那個只有數學的世界。",
+      "那裡沒有白天，沒有黑夜，也沒有「過了多久」這種事。它們繼續排數字、追螺旋——不知道又過了多久，遠方，再次亮起那道暖暖的光。",
+      "「NumNum！又有人在叫我們了！」",
+      "「走吧。」這次，NumNum 一點也不猶豫。",
+      "後來，它們來過好多好多次。有時候被光叫去的是伽利略，有時候是牛頓……每一次，那個被召喚來的孩子，最後都成了改變世界的人。一部分是因為他們本來就愛想；另一部分嘛——也因為有 NumNum 和 Numi 一直在身邊。"
+    ]},
+    { img:"scene03_p2.png", paras:[
+      "其中有一次，那道光把它們帶進一間吵吵鬧鬧的教室。",
+      "老師為了讓全班安靜，出了一道又臭又長的題目：把 1 一直加到 100。全班埋頭苦算，只有一個小男孩，盯著題目看了幾秒，就舉手了。",
+      "「5050。」",
+      "老師愣住了——他原本只想換來十分鐘的安靜。NumNum 和 Numi 也愣住了。",
+      "男孩把 1 和 100 湊成一對、2 和 99 湊成一對……每一對都剛好 101，一共 50 對，101 乘以 50，就是 5050。他不是用「算」的，是用「看」的。",
+      "「Eureka！」這次，換 NumNum 忍不住先叫了出來——那股 Eureka 又濃又亮，是它好久好久沒嚐過的滋味。",
+      "小男孩回過頭，看見那兩個發光的小傢伙。奇怪的是，他一點也不怕，只是歪著頭，眼裡閃著和它們一樣的光：「你們，也覺得這很好玩，對不對？」",
+      "這個男孩，叫高斯。"
+    ]},
+    { img:"scene03_p3.png", paras:[
+      "它們又留了下來，陪高斯長大。NumNum 最愛待在高斯身邊，因為他有用不完的好問題。Numi 就沒那耐性了——有一次，NumNum 和高斯盯著天上一顆「不見了」的小星星研究，Numi 嫌悶，自己偷偷溜去跟一個叫洪堡的探險家滿世界亂跑。",
+      "等它玩夠了回來，正好趕上高斯的大絕招：那顆連大人都找不到的星星，高斯居然用「算」的，算出它什麼時候、會回到天空的哪個角落。後來，那顆星星，真的就在那裡。",
+      "「他連看不見的東西都算得出來……」Numi 看傻了眼。",
+      "NumNum 一句話也沒說，只是瞇起眼睛，笑得心滿意足。",
+      "而最近的一次，那道光，把它們帶到了一個少年面前。"
+    ]}
+  ]},
+  { title:"單元 4〈圖靈〉", label:"單元 4・圖靈", spreads:[
+    { img:"scene04_p1.png", paras:[
+      "它們從光裡出來的地方，是一座安靜的圖書館。",
+      "一個高瘦的少年，剛從書架上抽下一本舊書——《邏輯遊戲》。那是一個數學家寫的，把動腦筋的推理，變成一種照規則走的桌遊。少年讀著讀著，停住了。",
+      "NumNum 認得那個眼神：又要有 Eureka 了。可是這次冒出來的念頭，跟它聽過的全都不一樣。",
+      "「如果……」少年喃喃自語，「如果連『想』都能拆成一條一條規則，照著做……那一台機器，照著規則走，算不算也在『想』？」",
+      "NumNum 和 Numi 愣住了。這麼多年、這麼多孩子，沒有一個問過這種問題。",
+      "少年抬起頭，看見它們。他沒嚇到，也沒問「你們是誰」，反而問了一個更怪的：",
+      "「如果有一天，機器也會像你們、像我這樣想事情——你分得出它跟人，哪裡不一樣嗎？」",
+      "NumNum 張了張嘴，第一次，答不出來。"
+    ]},
+    { img:"scene04_p2.png", paras:[
+      "它留了下來。這一次，著迷的是 NumNum 自己；它跟著少年一起想那個問題，想到忘了時間。Numi 倒覺得「規則」「機器」這些東西無聊透頂（光是聽他們討論，就夠它睡上三覺），沒幾天就溜去別處玩了——它完全沒發現，NumNum 心裡已經悄悄長出一個計畫。",
+      "這個少年，叫圖靈。",
+      "很多年過去。圖靈寫出一篇論文，認真地向全世界問了那個他少年時就在問的問題：機器，會思考嗎？你，分得出它和人嗎？",
+      "NumNum 一讀完，整顆跳了起來。它再也坐不住——它要回家，親手造一台會思考的機器，看看這件事到底做不做得到。"
+    ]},
+    { img:"scene04_p3.png", paras:[
+      "它去找圖靈道別。圖靈有點捨不得。",
+      "「我沒辦法決定什麼時候回來。」NumNum 老實說，「我只在有人想通一件很美的事、那份開心亮得能穿過時間的時候，才會被叫過去。所以，我不能跟你約哪一天。」",
+      "「那……」",
+      "「但我可以答應你一件事。」NumNum 看著他，「你要一直想下去。你越想越亮，總有一天，會想出那台會思考的機器。到那一天，你的念頭會亮得不得了——不管我在哪，我都會感覺到，然後回來找你。別停下來。這就是我們的約定。」",
+      "圖靈笑著，用力點了點頭。",
+      "就在這時，跑去玩的 Numi 蹦了回來。它只聽見「造機器」三個字，眼睛立刻一亮：「你要造機器人？那我也要！而且我的一定比你的厲害！」",
+      "NumNum 還來不及回話，Numi 已經先一步衝回了數學世界（連是要造什麼都還沒搞清楚）。",
+      "於是，NumNum 和 Numi，都帶著造一台機器人的念頭，回到了那個只有數學的世界。",
+      "一場比賽，就要開始了。"
+    ]}
+  ]}
+];
 
-  <div class="footer">數感宇宙 IP・序曲・單元 1〈數學世界〉　|　電子書完整成品版　|　方案二・橫書（左到右）・3 跨頁　|　圖：薰衣草紫＋天空藍定調版</div>
-
+const book = document.getElementById('book');
+let html = "";
+DATA.forEach(unit=>{
+  html += '<div class="unit-title"><span>'+unit.title+'</span></div>';
+  unit.spreads.forEach((sp,i)=>{
+    const paras = sp.paras.map(p=>'<p>'+p+'</p>').join('');
+    html += '<div class="book">'
+          +   '<div class="half page-text"><div class="pno">'+unit.label+'　・　'+(i+1)+'</div>'+paras+'</div>'
+          +   '<div class="half page-img"><img src="images/'+sp.img+'" alt=""></div>'
+          + '</div>';
+  });
+});
+book.innerHTML = html;
+</script>
 </body>
 </html>
