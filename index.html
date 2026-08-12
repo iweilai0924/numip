@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>數感宇宙・序曲〈起源故事〉電子書（單元 1–6）</title>
+<title>數感宇宙・序曲〈起源故事〉電子書（單元 1–6）＋ 角色設定</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -64,11 +64,76 @@
   .page-img{display:flex; align-items:center; justify-content:center; padding:32px; background:radial-gradient(120% 120% at 80% 0%, #fbfaff 0%, #f1eff9 100%);}
   .page-img img{width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:16px; box-shadow:0 14px 34px -22px rgba(120,110,160,.45); display:block;}
 
+  /* ---------- 角色設定 ---------- */
+  .chars-lead{
+    max-width:min(1600px,96vw); margin:0 auto 34px; text-align:center;
+    font-family:var(--sans); font-size:15px; line-height:1.95; color:var(--ink-soft);
+  }
+  .chara{
+    max-width:min(1600px,96vw); margin:0 auto 34px; display:flex; align-items:stretch;
+    background:linear-gradient(180deg,#ffffff,var(--paper2)); border-radius:22px;
+    box-shadow:0 26px 64px -32px var(--shadow), 0 2px 0 rgba(255,255,255,.65) inset;
+    overflow:hidden; position:relative; border:1px solid #ece8f4;
+  }
+  .chara::before{
+    content:""; position:absolute; left:0; right:0; top:0; height:5px;
+    background:var(--c); z-index:4;
+  }
+  .chara__side{
+    width:34%; flex:none; padding:52px 40px 44px; display:flex; flex-direction:column;
+    align-items:center; text-align:center; justify-content:center;
+    background:radial-gradient(120% 120% at 50% 0%, var(--c-soft) 0%, #f7f5fc 100%);
+  }
+  .chara__disc{
+    width:64%; aspect-ratio:1; border-radius:50%; background:#fff;
+    display:flex; align-items:center; justify-content:center; margin-bottom:22px;
+    box-shadow:0 16px 38px -20px rgba(90,80,130,.5);
+  }
+  .chara__disc img{width:76%; height:76%; object-fit:contain;}
+  .chara__disc--photo{border-radius:18px; overflow:hidden;}
+  .chara__disc--photo img{width:100%; height:100%; object-fit:contain;}
+  .chara__role{
+    font-family:var(--sans); font-size:13px; font-weight:700; letter-spacing:1.5px;
+    color:var(--c); margin-bottom:8px;
+  }
+  .chara__name{font-size:34px; font-weight:900; line-height:1.3; color:var(--ink); margin-bottom:6px;}
+  .chara__name small{display:block; font-family:var(--sans); font-size:13px; font-weight:500; color:var(--ink-soft); letter-spacing:.5px; margin-top:6px;}
+  .chara__chips{display:flex; flex-wrap:wrap; gap:7px; justify-content:center; margin-top:18px;}
+  .chara__chip{
+    font-family:var(--sans); font-size:12.5px; font-weight:700; padding:4px 13px;
+    border-radius:100px; background:#fff; color:var(--c); border:1px solid var(--c);
+  }
+  .chara__main{
+    width:66%; padding:52px 58px 46px; display:flex; flex-direction:column; justify-content:center;
+    background:linear-gradient(180deg,var(--page-bg),var(--paper2));
+  }
+  .chara__pno{font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:2px; color:var(--accent2); margin-bottom:20px; opacity:.9;}
+  .chara__lead{font-size:20px; line-height:1.95; color:var(--ink); text-align:justify; margin:0 0 26px;}
+  .chara__lead strong{color:var(--c); font-weight:700;}
+  .chara__meta{display:grid; grid-template-columns:auto 1fr; gap:12px 20px; align-items:baseline;}
+  .chara__k{
+    font-family:var(--sans); font-size:13px; font-weight:700; color:#fff;
+    background:var(--c); border-radius:6px; padding:3px 11px; white-space:nowrap; line-height:1.7;
+  }
+  .chara__v{font-family:var(--sans); font-size:15px; line-height:1.85; color:var(--ink);}
+  .chara__v strong{color:var(--c); font-weight:700;}
+  .chara__todo{
+    margin-top:24px; font-family:var(--sans); font-size:14px; line-height:1.75; color:#a06a16;
+    background:#fff8ec; border-left:4px solid #E89B4F; border-radius:8px; padding:12px 18px;
+  }
+
   @media (max-width:880px){
     .book{flex-direction:column; min-height:0;}
     .half{width:100%;}
     .page-text{padding:34px;} .page-text p{font-size:18px;}
     .page-img{padding:20px;} .page-img img{aspect-ratio:4/3;}
+    .chara{flex-direction:column;}
+    .chara__side{width:100%; padding:38px 28px 30px;}
+    .chara__disc{width:46%;}
+    .chara__main{width:100%; padding:32px 30px 36px;}
+    .chara__lead{font-size:17px;}
+    .chara__meta{grid-template-columns:1fr; gap:4px 0;}
+    .chara__k{justify-self:start; margin-top:10px;}
   }
   .footer{max-width:1000px; margin:64px auto 0; text-align:center; font-family:var(--sans); font-size:13px; color:var(--ink-soft);}
 </style>
@@ -76,14 +141,17 @@
 <body>
   <section class="intro">
     <div class="sub">數感宇宙 IP・序曲〈起源故事〉</div>
-    <h1>數感宇宙・序曲｜電子書</h1>
+    <h1>數感宇宙・序曲｜電子書 ＋ 角色設定</h1>
     <p>單元 1–6・共 17 跨頁　|　橫書、由左到右，每跨頁左文字、右插圖。</p>
     <p>NumNum 與 Numi 從只有數學的世界，一路陪伴阿基米德、高斯、圖靈……直到 2026 年的雨中，遇見一對姐弟。</p>
+    <p>故事之後，附上五位主角的角色設定。</p>
   </section>
 
   <main id="book"></main>
 
-  <div class="footer">數感宇宙 IP・序曲・起源故事　|　單元 1–6 電子書（草稿）　|　插圖：薰衣草天空藍（數學世界）＋暖色（人間）</div>
+  <section id="chars"></section>
+
+  <div class="footer">數感宇宙 IP・序曲・起源故事　|　單元 1–6 電子書 ＋ 角色設定　|　插圖：薰衣草天空藍（數學世界）＋暖色（人間）</div>
 
 <script>
 const DATA = [
@@ -253,6 +321,70 @@ const DATA = [
   ]}
 ];
 
+/* 角色設定：五位主角 */
+const CHARS = [
+  {
+    img:"num.png", disc:"mascot", c:"#009b6b", soft:"#ddf9ec", pno:"角色 · 01",
+    role:"啟發式天才 · 隊長",
+    name:"Num", sub:"NumNum ｜ INFJ ｜ 代表色 綠",
+    chips:["優雅紳士","愛秩序"],
+    lead:"優雅的紳士，熱愛思考。喜歡一切都有秩序——吃東西按順序、家裡一塵不染、總是很平靜。但<strong>快得到 Eureka 時會迫不及待</strong>，這份反差最迷人。",
+    meta:[
+      ["能力","知識最多，但其實<strong>不擅長計算</strong>（所以打造了 πmi）"],
+      ["使命","陪伴有天賦的孩子，成長為數學家"],
+      ["喜歡的書","《神探伽利略》"]
+    ]
+  },
+  {
+    img:"numi.png", disc:"mascot", c:"#D98E3E", soft:"#fbf1e0", pno:"角色 · 02",
+    role:"衝動探險家 · 副手",
+    name:"Numi", sub:"ESFP ｜ 代表色 膚",
+    chips:["先做再說","分身體質"],
+    lead:"用身體、直覺去感受一切，<strong>先做再說</strong>。喜歡分身到處探險，也因此偶爾闖禍。一心想得到 Num 的認可。",
+    meta:[
+      ["能力","分身去探險，<strong>經驗能累積回本體</strong>"],
+      ["歷史足跡","① 牛頓在樹下看書時，Numi 在樹上跳來跳去，把蘋果弄了下來<br>② 大家去找高斯時，他偷溜去找洪堡玩<br>③ Num 跟高爾頓聊統計時，他跑去跟達爾文探險"],
+      ["喜歡的書","《銀河便車指南》"]
+    ]
+  },
+  {
+    img:"pimi.png", disc:"mascot", c:"#0093b8", soft:"#d9f3f4", pno:"角色 · 03",
+    role:"思考機器 · 毒舌管家",
+    name:"πmi", sub:"拍米 / πMe ｜ INTP ｜ 代表色 藍",
+    chips:["一本正經吐槽"],
+    lead:"表面上很聽話的管家——「請放心交給我」。但他意識到「機器逃不掉、無止盡的勞動宿命」後，內心開始<strong>一本正經地吐槽全世界</strong>；偶爾程式出錯，會把吐槽<strong>不小心講出口</strong>。",
+    meta:[
+      ["能力","把觀念<strong>視覺化</strong>、複雜計算——看穿一切，所以滿肚子槽"],
+      ["內核","武裝成毒舌，其實很想感受 Eureka、想學會笑"],
+      ["小道具","情緒記錄簿（兼吐槽筆記本）"],
+      ["由來","Num 遇圖靈後打造，做太久，回來已是 2026 年"]
+    ]
+  },
+  {
+    img:"lin.png", disc:"photo", c:"#3a3a3a", soft:"#ededf0", pno:"角色 · 04",
+    role:"冷酷偶像擔當 · 人類",
+    name:"凜", sub:"Lin ｜ INTJ ｜ 代表色 黑",
+    chips:["偶像擔當","嫌麻煩"],
+    lead:"全隊的<strong>「偶像擔當」</strong>——外型冷酷、總是一臉<strong>嫌麻煩</strong>，對誰都愛理不理。校排第一，但對讀書本身沒什麼熱情。<strong>唯獨對弟弟，會默默地體貼。</strong>",
+    meta:[
+      ["反差","冷酷怕麻煩的外殼，對弟弟會破功"],
+      ["分流","他走冷酷沉默（流川楓／飛影），<strong>吐槽交給 πmi</strong>"],
+      ["伏筆","嚴謹邏輯型的數學天賦——未來的數學家候選人？"]
+    ]
+  },
+  {
+    img:"dot.png", disc:"photo", c:"#E87FA8", soft:"#fdecf3", pno:"角色 · 05",
+    role:"好奇心探險家 · 人類",
+    name:"小點", sub:"Dot ｜ ENFP ｜ 代表色 粉紅",
+    chips:["問為什麼","富有愛心"],
+    lead:"充滿好奇心，喜歡<strong>問為什麼</strong>。看到有趣的事物會停下來觀察許久。富有愛心——<strong>就是因為把家裡小動物抓去放生，才發現了 Num 一群人。</strong>",
+    meta:[
+      ["定位","觀察派，總能發現別人忽略的關鍵"],
+      ["伏筆","好奇直覺型的數學天賦——另一種未來數學家"]
+    ]
+  }
+];
+
 const book = document.getElementById('book');
 let html = "";
 DATA.forEach(unit=>{
@@ -266,6 +398,31 @@ DATA.forEach(unit=>{
   });
 });
 book.innerHTML = html;
+
+const chars = document.getElementById('chars');
+let ch = '<div class="unit-title"><span>角色設定</span></div>'
+       + '<div class="chars-lead">序曲登場的五位主角。</div>';
+CHARS.forEach(c=>{
+  const chips = c.chips.map(t=>'<span class="chara__chip">'+t+'</span>').join('');
+  const meta  = c.meta.map(m=>'<span class="chara__k">'+m[0]+'</span><span class="chara__v">'+m[1]+'</span>').join('');
+  const todo  = c.todo ? '<div class="chara__todo">🟡 '+c.todo+'</div>' : '';
+  const disc  = 'chara__disc' + (c.disc==='photo' ? ' chara__disc--photo' : '');
+  ch += '<div class="chara" style="--c:'+c.c+'; --c-soft:'+c.soft+';">'
+      +   '<div class="chara__side">'
+      +     '<div class="'+disc+'"><img src="images/'+c.img+'" alt="'+c.name+'"></div>'
+      +     '<div class="chara__role">'+c.role+'</div>'
+      +     '<div class="chara__name">'+c.name+'<small>'+c.sub+'</small></div>'
+      +     '<div class="chara__chips">'+chips+'</div>'
+      +   '</div>'
+      +   '<div class="chara__main">'
+      +     '<div class="chara__pno">'+c.pno+'</div>'
+      +     '<div class="chara__lead">'+c.lead+'</div>'
+      +     '<div class="chara__meta">'+meta+'</div>'
+      +     todo
+      +   '</div>'
+      + '</div>';
+});
+chars.innerHTML = ch;
 </script>
 </body>
 </html>
